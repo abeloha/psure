@@ -46,8 +46,8 @@ class SummaryBalanceView extends StatelessWidget {
                 child: Column(
                   children: <Widget>[
                     Padding(
-                      padding:
-                          const EdgeInsets.only(top: 16, left: 16, right: 16),
+                      padding: const EdgeInsets.only(
+                          top: 16, left: 16, right: 16, bottom: 10),
                       child: Row(
                         children: <Widget>[
                           Expanded(
@@ -69,7 +69,7 @@ class SummaryBalanceView extends StatelessWidget {
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsets.all(8.0),
+                                        padding: const EdgeInsets.all(12.0),
                                         child: Column(
                                           mainAxisAlignment:
                                               MainAxisAlignment.center,
@@ -114,6 +114,8 @@ class SummaryBalanceView extends StatelessWidget {
                                                             AppConstants
                                                                 .balanceRemited))
                                                         .toString(),
+                                                    overflow:
+                                                        TextOverflow.ellipsis,
                                                     textAlign: TextAlign.center,
                                                     style: TextStyle(
                                                       fontFamily:
@@ -214,6 +216,8 @@ class SummaryBalanceView extends StatelessWidget {
                                                             AppConstants
                                                                 .balanceRemited))
                                                         .toString(),
+                                                    overflow:
+                                                        TextOverflow.ellipsis,
                                                     textAlign: TextAlign.center,
                                                     style: TextStyle(
                                                       fontFamily:
@@ -364,49 +368,6 @@ class CurvePainter extends CustomPainter {
     } else {
       colorsList.addAll([Colors.white, Colors.white]);
     }
-
-    final shdowPaint = new Paint()
-      ..color = Colors.black.withOpacity(0.4)
-      ..strokeCap = StrokeCap.round
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 14;
-    final shdowPaintCenter = new Offset(size.width / 2, size.height / 2);
-    final shdowPaintRadius =
-        math.min(size.width / 2, size.height / 2) - (14 / 2);
-      //Rect rect, double startAngle, double sweepAngle, bool useCenter, Paint paint
-    canvas.drawArc(
-        new Rect.fromCircle(center: shdowPaintCenter, radius: shdowPaintRadius),
-        0,
-        degreeToRadians(angle),
-        false,
-        shdowPaint);
-
-    shdowPaint.color = Colors.grey.withOpacity(0.3);
-    shdowPaint.strokeWidth = 16;
-    canvas.drawArc(
-        new Rect.fromCircle(center: shdowPaintCenter, radius: shdowPaintRadius),
-        degreeToRadians(278),
-        degreeToRadians(360 - (365 - angle)),
-        false,
-        shdowPaint);
-
-    shdowPaint.color = Colors.grey.withOpacity(0.2);
-    shdowPaint.strokeWidth = 20;
-    canvas.drawArc(
-        new Rect.fromCircle(center: shdowPaintCenter, radius: shdowPaintRadius),
-        degreeToRadians(278),
-        degreeToRadians(360 - (365 - angle)),
-        false,
-        shdowPaint);
-
-    shdowPaint.color = Colors.grey.withOpacity(0.1);
-    shdowPaint.strokeWidth = 22;
-    canvas.drawArc(
-        new Rect.fromCircle(center: shdowPaintCenter, radius: shdowPaintRadius),
-        degreeToRadians(278),
-        degreeToRadians(360 - (365 - angle)),
-        false,
-        shdowPaint);
 
     final rect = new Rect.fromLTWH(0.0, 0.0, size.width, size.width);
     final gradient = new SweepGradient(

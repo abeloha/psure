@@ -69,8 +69,8 @@ class RunningView extends StatelessWidget {
                                           top: 16,
                                         ),
                                         child: Text(
-                                          "You're doing great!",
-                                          textAlign: TextAlign.left,
+                                          "NGN 250,000.00",
+                                          textAlign: TextAlign.right,
                                           style: TextStyle(
                                             fontFamily: HomeAppTheme.fontName,
                                             fontWeight: FontWeight.w500,
@@ -85,12 +85,31 @@ class RunningView extends StatelessWidget {
                                   Padding(
                                     padding: const EdgeInsets.only(
                                       left: 100,
-                                      bottom: 12,
+                                      bottom: 6,
                                       top: 4,
                                       right: 16,
                                     ),
                                     child: Text(
-                                      "Keep it up\nand stick to your plan!",
+                                      "Onuoha Abel Agu",
+                                      textAlign: TextAlign.left,
+                                      style: TextStyle(
+                                        fontFamily: HomeAppTheme.fontName,
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 12,
+                                        letterSpacing: 0.0,
+                                        color: HomeAppTheme.nearlyBlack,
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(
+                                      left: 100,
+                                      bottom: 6,
+                                      top: 2,
+                                      right: 16,
+                                    ),
+                                    child: Text(
+                                      "Ref: 02525-Trv-Ujk-Tranfer",
                                       textAlign: TextAlign.left,
                                       style: TextStyle(
                                         fontFamily: HomeAppTheme.fontName,
@@ -100,6 +119,54 @@ class RunningView extends StatelessWidget {
                                         color:
                                             HomeAppTheme.grey.withOpacity(0.5),
                                       ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(
+                                      left: 100,
+                                      bottom: 6,
+                                      top: 2,
+                                      right: 16,
+                                    ),
+                                    child: Text(
+                                      "Payment for Cloths sent to me",
+                                      textAlign: TextAlign.left,
+                                      style: TextStyle(
+                                        fontFamily: HomeAppTheme.fontName,
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 10,
+                                        letterSpacing: 0.0,
+                                        color:
+                                            HomeAppTheme.grey.withOpacity(0.5),
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(
+                                      left: 100,
+                                      bottom: 6,
+                                      top: 2,
+                                      right: 16,
+                                    ),
+                                    child: Text(
+                                      "Contract - 25-Nov-2020 - 30-Nov-2020",
+                                      textAlign: TextAlign.left,
+                                      style: TextStyle(
+                                        fontFamily: HomeAppTheme.fontName,
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 10,
+                                        letterSpacing: 0.0,
+                                        color:
+                                            HomeAppTheme.grey.withOpacity(0.5),
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(
+                                      left: 100,
+                                      bottom: 6,
+                                      top: 2,
+                                      right: 16,
                                     ),
                                   ),
                                 ],
@@ -114,7 +181,22 @@ class RunningView extends StatelessWidget {
                         child: SizedBox(
                           width: 110,
                           height: 110,
-                          child: Image.asset("assets/home/runner.png"),
+                          child: Image.asset("assets/home/arrow-in.png"),
+                        ),
+                      ),
+                      Positioned(
+                        top: 110,
+                        left: 10,
+                        child: Text(
+                          "12-Nov-2020",
+                          textAlign: TextAlign.left,
+                          style: TextStyle(
+                            fontFamily: HomeAppTheme.fontName,
+                            fontWeight: FontWeight.w500,
+                            fontSize: 10,
+                            letterSpacing: 0.0,
+                            color: HomeAppTheme.dark_grey,
+                          ),
                         ),
                       )
                     ],

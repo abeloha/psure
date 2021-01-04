@@ -25,15 +25,15 @@ class TotalBalanceView extends StatelessWidget {
                 0.0, 30 * (1.0 - animation.value), 0.0),
             child: Padding(
               padding: const EdgeInsets.only(
-                  left: 24, right: 24, top: 16, bottom: 18),
+                  left: 24, right: 24, top: 16, bottom: 20),
               child: Container(
                 decoration: BoxDecoration(
                   color: HomeAppTheme.white,
                   borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(8.0),
-                      bottomLeft: Radius.circular(8.0),
-                      bottomRight: Radius.circular(8.0),
-                      topRight: Radius.circular(68.0)),
+                      topLeft: Radius.circular(20.0),
+                      bottomLeft: Radius.circular(20.0),
+                      bottomRight: Radius.circular(20.0),
+                      topRight: Radius.circular(20.0)),
                   boxShadow: <BoxShadow>[
                     BoxShadow(
                         color: HomeAppTheme.grey.withOpacity(0.2),
@@ -44,8 +44,8 @@ class TotalBalanceView extends StatelessWidget {
                 child: Column(
                   children: <Widget>[
                     Padding(
-                      padding:
-                          const EdgeInsets.only(top: 16, left: 16, right: 24),
+                      padding: const EdgeInsets.only(
+                          top: 20, left: 16, right: 24, bottom: 10),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -81,6 +81,7 @@ class TotalBalanceView extends StatelessWidget {
                                           .format(AppConstants.balanceTotal)
                                           .toString(),
                                       textAlign: TextAlign.center,
+                                      overflow: TextOverflow.ellipsis,
                                       style: TextStyle(
                                         fontFamily: HomeAppTheme.fontName,
                                         fontWeight: FontWeight.w600,
@@ -109,6 +110,7 @@ class TotalBalanceView extends StatelessWidget {
                                             const EdgeInsets.only(left: 4.0),
                                         child: Text(
                                           'Add',
+                                          overflow: TextOverflow.ellipsis,
                                           textAlign: TextAlign.center,
                                           style: TextStyle(
                                             fontFamily: HomeAppTheme.fontName,
@@ -127,6 +129,7 @@ class TotalBalanceView extends StatelessWidget {
                                         top: 4, bottom: 14),
                                     child: Text(
                                       'Money',
+                                      overflow: TextOverflow.ellipsis,
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
                                         fontFamily: HomeAppTheme.fontName,
