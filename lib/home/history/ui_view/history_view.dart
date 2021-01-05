@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import '../home_app_theme.dart';
+import 'package:psure/home/home_app_theme.dart';
 
-class RunningView extends StatelessWidget {
+class HistoryView extends StatelessWidget {
   final AnimationController animationController;
   final Animation animation;
 
-  const RunningView({Key key, this.animationController, this.animation})
+  const HistoryView({Key key, this.animationController, this.animation})
       : super(key: key);
 
   @override
@@ -181,7 +181,7 @@ class RunningView extends StatelessWidget {
                         child: SizedBox(
                           width: 110,
                           height: 110,
-                          child: Image.asset("assets/home/arrow-in.png"),
+                          child: Image.asset("assets/home/arrow_in.png"),
                         ),
                       ),
                       Positioned(

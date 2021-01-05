@@ -1,7 +1,6 @@
-import 'package:psure/home/ui_view/area_list_view.dart';
-import 'package:psure/home/ui_view/running_view.dart';
-import 'package:psure/home/ui_view/title_view.dart';
-import 'package:psure/home/ui_view/range_select_view.dart';
+import 'package:psure/home/history/ui_view/history_view.dart';
+import 'package:psure/home/history/ui_view/range_select_view.dart';
+import 'package:psure/home/history/ui_view/range_top_text_view.dart';
 import 'package:flutter/material.dart';
 
 import '../home_app_theme.dart';
@@ -58,18 +57,9 @@ class _HistoryScreenState extends State<HistoryScreen>
 
   void addAllListData() {
     const int count = 5;
-    listViews.add(
-      RangeSelectView(
-        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-            parent: widget.animationController,
-            curve:
-                Interval((1 / count) * 2, 1.0, curve: Curves.fastOutSlowIn))),
-        animationController: widget.animationController,
-      ),
-    );
 
     listViews.add(
-      RunningView(
+      RangeTopTextView(
         animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
             parent: widget.animationController,
             curve:
@@ -78,7 +68,25 @@ class _HistoryScreenState extends State<HistoryScreen>
       ),
     );
 
-    
+    listViews.add(
+      RangeSelectView(
+        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
+            parent: widget.animationController,
+            curve:
+                Interval((1 / count) * 3, 1.0, curve: Curves.fastOutSlowIn))),
+        animationController: widget.animationController,
+      ),
+    );
+
+    listViews.add(
+      HistoryView(
+        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
+            parent: widget.animationController,
+            curve:
+                Interval((1 / count) * 3, 1.0, curve: Curves.fastOutSlowIn))),
+        animationController: widget.animationController,
+      ),
+    );
   }
 
   Future<bool> getData() async {

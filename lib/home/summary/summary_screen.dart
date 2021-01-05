@@ -1,7 +1,7 @@
-import 'package:psure/home/ui_view/total_balance_iew.dart';
-import 'package:psure/home/ui_view/income_view.dart';
-import 'package:psure/home/ui_view/summary_balance_view.dart';
-import 'package:psure/home/ui_view/title_view.dart';
+import 'package:psure/home/summary/ui_view/total_balance_iew.dart';
+import 'package:psure/home/summary/ui_view/income_view.dart';
+import 'package:psure/home/summary/ui_view/summary_balance_view.dart';
+import 'package:psure/home/summary/ui_view/title_view.dart';
 import 'package:psure/home/home_app_theme.dart';
 import 'package:psure/home/summary/transaction_type_list_view.dart';
 import 'package:flutter/material.dart';

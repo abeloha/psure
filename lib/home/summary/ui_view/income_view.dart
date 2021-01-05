@@ -1,7 +1,7 @@
 import 'package:psure/main.dart';
 import 'package:flutter/material.dart';
 
-import '../home_app_theme.dart';
+import 'package:psure/home/home_app_theme.dart';
 
 class IncomeView extends StatelessWidget {
   final AnimationController animationController;
@@ -48,9 +48,9 @@ class IncomeView extends StatelessWidget {
                             children: <Widget>[
                               Padding(
                                 padding: const EdgeInsets.only(
-                                    left: 68, bottom: 12, right: 16, top: 12),
+                                    left: 75, bottom: 12, right: 16, top: 12),
                                 child: Text(
-                                  'Remmitted ammounts are your available balance for transfers and other transactions.',
+                                  'Your cleared amounts is  available balance for you can transact with.',
                                   textAlign: TextAlign.left,
                                   style: TextStyle(
                                     fontFamily: HomeAppTheme.fontName,

@@ -1,24 +1,43 @@
 import 'package:psure/main.dart';
 import 'package:flutter/material.dart';
-import '../home_app_theme.dart';
+import 'package:psure/home/home_app_theme.dart';
 
-class RangeSelectView extends StatelessWidget {
+class RangeTopTextView extends StatefulWidget {
+  const RangeTopTextView({Key key, this.animationController, this.animation})
+      : super(key: key);
+
   final AnimationController animationController;
   final Animation animation;
 
-  const RangeSelectView({Key key, this.animationController, this.animation})
-      : super(key: key);
+  @override
+  _RangeTopTextView createState() => _RangeTopTextView();
+}
+
+class _RangeTopTextView extends State<RangeTopTextView>
+    with TickerProviderStateMixin {
+  DateTime startDate = DateTime.now();
+  DateTime endDate = DateTime.now().add(const Duration(days: 5));
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  Future<bool> getData() async {
+    await Future<dynamic>.delayed(const Duration(milliseconds: 50));
+    return true;
+  }
 
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
-      animation: animationController,
+      animation: widget.animationController,
       builder: (BuildContext context, Widget child) {
         return FadeTransition(
-          opacity: animation,
+          opacity: widget.animation,
           child: new Transform(
             transform: new Matrix4.translationValues(
-                0.0, 30 * (1.0 - animation.value), 0.0),
+                0.0, 30 * (1.0 - widget.animation.value), 0.0),
             child: Padding(
               padding: const EdgeInsets.only(
                   left: 24, right: 24, top: 16, bottom: 18),
@@ -60,7 +79,7 @@ class RangeSelectView extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(top: 8.0),
                         child: Text(
-                          'Check how and when you\nSend and Receive Money',
+                          'See how you\nSend and Receive Money',
                           textAlign: TextAlign.left,
                           style: TextStyle(
                             fontFamily: HomeAppTheme.fontName,
@@ -71,17 +90,6 @@ class RangeSelectView extends StatelessWidget {
                           ),
                         ),
                       ),
-                      SizedBox(
-                        height: 32,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(right: 4),
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.end,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[],
-                        ),
-                      )
                     ],
                   ),
                 ),

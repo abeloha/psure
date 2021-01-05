@@ -80,7 +80,7 @@ class SummaryBalanceView extends StatelessWidget {
                                               padding: const EdgeInsets.only(
                                                   left: 4, bottom: 2),
                                               child: Text(
-                                                'Remitted',
+                                                'Cleared',
                                                 textAlign: TextAlign.center,
                                                 style: TextStyle(
                                                   fontFamily:
@@ -103,7 +103,7 @@ class SummaryBalanceView extends StatelessWidget {
                                                   width: 28,
                                                   height: 28,
                                                   child: Image.asset(
-                                                      "assets/home/remitted.png"),
+                                                      "assets/home/cleared.png"),
                                                 ),
                                                 Padding(
                                                   padding:
@@ -112,7 +112,7 @@ class SummaryBalanceView extends StatelessWidget {
                                                   child: Text(
                                                     (moneyFormat.format(
                                                             AppConstants
-                                                                .balanceRemited))
+                                                                .balanceCleared))
                                                         .toString(),
                                                     overflow:
                                                         TextOverflow.ellipsis,
@@ -214,7 +214,7 @@ class SummaryBalanceView extends StatelessWidget {
                                                     (moneyFormat.format(AppConstants
                                                                 .balanceTotal -
                                                             AppConstants
-                                                                .balanceRemited))
+                                                                .balanceCleared))
                                                         .toString(),
                                                     overflow:
                                                         TextOverflow.ellipsis,
@@ -288,7 +288,7 @@ class SummaryBalanceView extends StatelessWidget {
                                             CrossAxisAlignment.center,
                                         children: <Widget>[
                                           Text(
-                                            (AppConstants.balanceRemited *
+                                            (AppConstants.balanceCleared *
                                                     100 /
                                                     AppConstants.balanceTotal)
                                                 .toStringAsFixed(2),
@@ -303,7 +303,7 @@ class SummaryBalanceView extends StatelessWidget {
                                             ),
                                           ),
                                           Text(
-                                            '% remmitted',
+                                            '% Cleared',
                                             textAlign: TextAlign.center,
                                             style: TextStyle(
                                               fontFamily: HomeAppTheme.fontName,
@@ -328,7 +328,7 @@ class SummaryBalanceView extends StatelessWidget {
                                             HexColor("#8A98E8")
                                           ],
                                           angle: 360 *
-                                              AppConstants.balanceRemited /
+                                              AppConstants.balanceCleared /
                                               AppConstants.balanceTotal),
                                       child: SizedBox(
                                         width: 108,
