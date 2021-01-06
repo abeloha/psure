@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 import '../home_app_theme.dart';
 import 'package:psure/util/app_constants.dart';
 
+import 'package:psure/home/models/transaction_history_data.dart';
+
 class HistoryScreen extends StatefulWidget {
   const HistoryScreen({Key key, this.animationController}) : super(key: key);
 
@@ -21,6 +23,8 @@ class _HistoryScreenState extends State<HistoryScreen>
   List<Widget> listViews = <Widget>[];
   final ScrollController scrollController = ScrollController();
   double topBarOpacity = 0.0;
+
+  List<TransactionHistoryData> _historyData = TransactionHistoryData.dataList;
 
   @override
   void initState() {
@@ -78,15 +82,21 @@ class _HistoryScreenState extends State<HistoryScreen>
       ),
     );
 
-    listViews.add(
-      HistoryView(
-        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-            parent: widget.animationController,
-            curve:
-                Interval((1 / count) * 3, 1.0, curve: Curves.fastOutSlowIn))),
-        animationController: widget.animationController,
-      ),
-    );
+    print(_historyData.length);
+
+    for (var i = 0; i < _historyData.length; i++) {
+      listViews.add(
+        HistoryView(
+          animation: Tween<double>(begin: 0.0, end: 1.0).animate(
+              CurvedAnimation(
+                  parent: widget.animationController,
+                  curve: Interval((1 / count) * 3, 1.0,
+                      curve: Curves.fastOutSlowIn))),
+          animationController: widget.animationController,
+          data: _historyData[i],
+        ),
+      );
+    }
   }
 
   Future<bool> getData() async {

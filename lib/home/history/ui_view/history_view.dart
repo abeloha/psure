@@ -1,28 +1,44 @@
 import 'package:flutter/material.dart';
 import 'package:psure/home/home_app_theme.dart';
 
-class HistoryView extends StatelessWidget {
+import 'package:psure/home/models/transaction_history_data.dart';
+
+class HistoryView extends StatefulWidget {
+  const HistoryView(
+      {Key key, this.animationController, this.animation, this.data})
+      : super(key: key);
   final AnimationController animationController;
   final Animation animation;
+  final TransactionHistoryData data;
+  @override
+  _HistoryViewState createState() => _HistoryViewState();
+}
 
-  const HistoryView({Key key, this.animationController, this.animation})
-      : super(key: key);
-
+class _HistoryViewState extends State<HistoryView> {
   @override
   Widget build(BuildContext context) {
+    double left = 24;
+    double right = 24;
+
+    if (widget.data.transactionType == "CREDIT") {
+      right = 55;
+    } else {
+      left = 55;
+    }
+
     return AnimatedBuilder(
-      animation: animationController,
+      animation: widget.animationController,
       builder: (BuildContext context, Widget child) {
         return FadeTransition(
-          opacity: animation,
+          opacity: widget.animation,
           child: new Transform(
             transform: new Matrix4.translationValues(
-                0.0, 30 * (1.0 - animation.value), 0.0),
+                0.0, 30 * (1.0 - widget.animation.value), 0.0),
             child: Column(
               children: <Widget>[
                 Padding(
-                  padding: const EdgeInsets.only(
-                      left: 24, right: 24, top: 0, bottom: 0),
+                  padding: EdgeInsets.only(
+                      left: left, right: right, top: 0, bottom: 0),
                   child: Stack(
                     overflow: Overflow.visible,
                     children: <Widget>[
@@ -53,7 +69,7 @@ class HistoryView extends StatelessWidget {
                                   height: 74,
                                   child: AspectRatio(
                                     aspectRatio: 1.714,
-                                    child: Image.asset("assets/home/back.png"),
+                                    child: getBgWidget(),
                                   ),
                                 ),
                               ),
@@ -69,7 +85,9 @@ class HistoryView extends StatelessWidget {
                                           top: 16,
                                         ),
                                         child: Text(
-                                          "NGN 250,000.00",
+                                          widget.data.currencyCode +
+                                              " " +
+                                              widget.data.amount.toString(),
                                           textAlign: TextAlign.right,
                                           style: TextStyle(
                                             fontFamily: HomeAppTheme.fontName,
@@ -89,17 +107,7 @@ class HistoryView extends StatelessWidget {
                                       top: 4,
                                       right: 16,
                                     ),
-                                    child: Text(
-                                      "Onuoha Abel Agu",
-                                      textAlign: TextAlign.left,
-                                      style: TextStyle(
-                                        fontFamily: HomeAppTheme.fontName,
-                                        fontWeight: FontWeight.w500,
-                                        fontSize: 12,
-                                        letterSpacing: 0.0,
-                                        color: HomeAppTheme.nearlyBlack,
-                                      ),
-                                    ),
+                                    child: getNameWidget(),
                                   ),
                                   Padding(
                                     padding: const EdgeInsets.only(
@@ -109,7 +117,7 @@ class HistoryView extends StatelessWidget {
                                       right: 16,
                                     ),
                                     child: Text(
-                                      "Ref: 02525-Trv-Ujk-Tranfer",
+                                      widget.data.ref,
                                       textAlign: TextAlign.left,
                                       style: TextStyle(
                                         fontFamily: HomeAppTheme.fontName,
@@ -129,7 +137,7 @@ class HistoryView extends StatelessWidget {
                                       right: 16,
                                     ),
                                     child: Text(
-                                      "Payment for Cloths sent to me",
+                                      widget.data.desc,
                                       textAlign: TextAlign.left,
                                       style: TextStyle(
                                         fontFamily: HomeAppTheme.fontName,
@@ -149,7 +157,9 @@ class HistoryView extends StatelessWidget {
                                       right: 16,
                                     ),
                                     child: Text(
-                                      "Contract - 25-Nov-2020 - 30-Nov-2020",
+                                      widget.data.contractStartDate +
+                                          " - " +
+                                          widget.data.contractEndDate,
                                       textAlign: TextAlign.left,
                                       style: TextStyle(
                                         fontFamily: HomeAppTheme.fontName,
@@ -181,14 +191,14 @@ class HistoryView extends StatelessWidget {
                         child: SizedBox(
                           width: 110,
                           height: 110,
-                          child: Image.asset("assets/home/arrow_in.png"),
+                          child: getArrowWidget(),
                         ),
                       ),
                       Positioned(
                         top: 110,
                         left: 10,
                         child: Text(
-                          "12-Nov-2020",
+                          widget.data.transactionDate,
                           textAlign: TextAlign.left,
                           style: TextStyle(
                             fontFamily: HomeAppTheme.fontName,
@@ -208,5 +218,38 @@ class HistoryView extends StatelessWidget {
         );
       },
     );
+  }
+
+  Widget getBgWidget() {
+    var bb = widget.data.contractStatus;
+    return Image.asset("assets/home/back.png");
+  }
+
+  Widget getNameWidget() {
+    String name = widget.data.sender;
+    if (widget.data.transactionType == "DEBIT") {
+      name = widget.data.recipient;
+    }
+
+    return Text(
+      name,
+      textAlign: TextAlign.left,
+      style: TextStyle(
+        fontFamily: HomeAppTheme.fontName,
+        fontWeight: FontWeight.w500,
+        fontSize: 12,
+        letterSpacing: 0.0,
+        color: HomeAppTheme.nearlyBlack,
+      ),
+    );
+  }
+
+  Widget getArrowWidget() {
+    if (widget.data.transactionType == "CREDIT") {
+      return Image.asset("assets/home/arrow_in.png");
+      ;
+    } else {
+      return Image.asset("assets/home/arrow_out.png");
+    }
   }
 }
