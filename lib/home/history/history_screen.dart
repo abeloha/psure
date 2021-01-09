@@ -81,9 +81,6 @@ class _HistoryScreenState extends State<HistoryScreen>
         animationController: widget.animationController,
       ),
     );
-
-    print(_historyData.length);
-
     for (var i = 0; i < _historyData.length; i++) {
       listViews.add(
         HistoryView(
