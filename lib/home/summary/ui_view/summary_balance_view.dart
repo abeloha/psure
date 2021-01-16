@@ -122,7 +122,7 @@ class SummaryBalanceView extends StatelessWidget {
                                                           HomeAppTheme.fontName,
                                                       fontWeight:
                                                           FontWeight.w600,
-                                                      fontSize: 16,
+                                                      fontSize: 12,
                                                       color: HomeAppTheme
                                                           .darkerText,
                                                     ),
@@ -224,7 +224,7 @@ class SummaryBalanceView extends StatelessWidget {
                                                           HomeAppTheme.fontName,
                                                       fontWeight:
                                                           FontWeight.w600,
-                                                      fontSize: 16,
+                                                      fontSize: 12,
                                                       color: HomeAppTheme
                                                           .darkerText,
                                                     ),

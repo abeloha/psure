@@ -83,7 +83,7 @@ class LandingScreenState extends State<LandingScreen>
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               new AnimatedText(
-                  "Now a mordern \nway to transact", animatedTextDelay,
+                  "Now a modern \nway to transact", animatedTextDelay,
                   durationInMilliseconds: 2500),
               new AnimatedSloganText(animatedTextDelay + 2500),
             ],

@@ -30,7 +30,7 @@ class _AnimationState extends State<AnimatedSloganText>
 
   String firstLocation = "eWallet";
   String secondLocation = "Transfer Money";
-  String thirdLocation = "Buy Securely";
+  String thirdLocation = "Buy Securely ... and More";
 
   @override
   void initState() {
@@ -140,7 +140,7 @@ class _AnimationState extends State<AnimatedSloganText>
               ),
             ),
           ),
-          // New York
+          // Transfer Money
           new AlignTransition(
             alignment: !(transferMoneySlideIn.value.y == 0.0)
                 ? transferMoneySlideIn
