@@ -6,12 +6,12 @@ import 'package:psure/home/home_app_theme.dart';
 import 'package:psure/home/summary/summary_screen.dart';
 
 
-class MyHomePage extends StatefulWidget {
+class HomeScreen extends StatefulWidget {
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _HomeScreenState createState() => _HomeScreenState();
 }
 
-class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
+class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   AnimationController animationController;
 
   List<TabIconData> tabIconsList = TabIconData.tabIconsList;

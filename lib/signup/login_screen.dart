@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:psure/navigation_home_screen.dart';
 import 'package:psure/signup/signup_screen.dart';
 import 'ui_view/bezier_container.dart';
 import 'ui_view/app_title.dart';
@@ -61,7 +62,8 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget _submitButton() {
     return InkWell(
       onTap: () {
-        print('login clicked');
+        Navigator.pushReplacement(context,
+            MaterialPageRoute(builder: (context) => NavigationHomeScreen()));
       },
       child: Container(
         width: MediaQuery.of(context).size.width,

@@ -19,7 +19,7 @@ class _NavigationHomeScreenState extends State<NavigationHomeScreen> {
   @override
   void initState() {
     drawerIndex = DrawerIndex.HOME;
-    screenView = MyHomePage();
+    screenView = HomeScreen();
     super.initState();
   }
 
@@ -40,7 +40,7 @@ class _NavigationHomeScreenState extends State<NavigationHomeScreen> {
               //callback from drawer for replace screen as user need with passing DrawerIndex(Enum index)
             },
             screenView: screenView,
-            //we replace screen view as we need on navigate starting screens like MyHomePage, HelpScreen, FeedbackScreen, etc...
+            //we replace screen view as we need on navigate starting screens like HomeScreen, HelpScreen, FeedbackScreen, etc...
           ),
         ),
       ),
@@ -52,7 +52,7 @@ class _NavigationHomeScreenState extends State<NavigationHomeScreen> {
       drawerIndex = drawerIndexdata;
       if (drawerIndex == DrawerIndex.HOME) {
         setState(() {
-          screenView = MyHomePage();
+          screenView = HomeScreen();
         });
       } else if (drawerIndex == DrawerIndex.Help) {
         setState(() {
@@ -69,7 +69,7 @@ class _NavigationHomeScreenState extends State<NavigationHomeScreen> {
       } else {
         //show home anyway way......
         setState(() {
-          screenView = MyHomePage();
+          screenView = HomeScreen();
         });
       }
     }

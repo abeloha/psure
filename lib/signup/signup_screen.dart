@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:psure/navigation_home_screen.dart';
 import 'package:psure/signup/ui_view/bezier_container.dart';
 import 'package:psure/signup/login_screen.dart';
 import 'ui_view/app_title.dart';
@@ -61,7 +62,8 @@ class _SignupScreenState extends State<SignupScreen> {
   Widget _submitButton() {
     return InkWell(
       onTap: () {
-        print('Sign up clicked');
+        Navigator.pushReplacement(context,
+            MaterialPageRoute(builder: (context) => NavigationHomeScreen()));
       },
       child: Container(
         width: MediaQuery.of(context).size.width,
