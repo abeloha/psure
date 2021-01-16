@@ -75,7 +75,10 @@ class _LoginScreenState extends State<LoginScreen> {
           gradient: LinearGradient(
               begin: Alignment.centerLeft,
               end: Alignment.centerRight,
-              colors: [Color(0xfffbb448), Color(0xfff7892b)])),
+              colors: [
+                Colors.grey.withAlpha(150),
+                Colors.grey.withAlpha(100)
+              ])),
       child: Text(
         'Login',
         style: TextStyle(fontSize: 20, color: Colors.white),
@@ -109,7 +112,7 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
           ),
           SizedBox(
-            width: 20,
+            width: 15,
           ),
         ],
       ),

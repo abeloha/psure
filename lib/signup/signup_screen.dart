@@ -75,7 +75,7 @@ class _SignupScreenState extends State<SignupScreen> {
           gradient: LinearGradient(
               begin: Alignment.centerLeft,
               end: Alignment.centerRight,
-              colors: [Color(0xfffbb448), Color(0xfff7892b)])),
+              colors: [ Colors.green, Colors.greenAccent,])),
       child: Text(
         'Register Now',
         style: TextStyle(fontSize: 20, color: Colors.white),
