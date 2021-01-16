@@ -5,6 +5,9 @@ import 'package:psure/landing/animated_text.dart';
 import 'package:psure/landing/spread_circles.dart';
 import 'package:psure/landing/stacked_circles.dart';
 
+import 'package:psure/signup/login_screen.dart';
+import 'package:psure/signup/signup_screen.dart';
+
 class LandingScreen extends StatefulWidget {
   @override
   State createState() => new LandingScreenState();
@@ -149,7 +152,8 @@ class LandingScreenState extends State<LandingScreen>
         ),
       ),
       onTap: () {
-        createAccount();
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => SignupScreen()));
       },
     );
   }
@@ -168,7 +172,7 @@ class LandingScreenState extends State<LandingScreen>
           ),
           alignment: Alignment.center,
           child: new Text(
-            "Sign in",
+            "Login",
             style: new TextStyle(
                 color: Colors.black54,
                 fontSize: 16.0,
@@ -177,7 +181,8 @@ class LandingScreenState extends State<LandingScreen>
         ),
       ),
       onTap: () {
-        signIn();
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => LoginScreen()));
       },
     );
   }
@@ -197,13 +202,5 @@ class LandingScreenState extends State<LandingScreen>
         ],
       ),
     );
-  }
-
-  void createAccount() {
-    print('New account button tapped');
-  }
-
-  void signIn() {
-    print('Sign in button tapped');
   }
 }
