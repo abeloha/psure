@@ -76,9 +76,7 @@ class _LoginScreenState extends State<LoginScreen> {
               begin: Alignment.centerLeft,
               end: Alignment.centerRight,
               colors: [
-                Colors.grey.withAlpha(150),
-                Colors.grey.withAlpha(100)
-              ])),
+                Colors.green, Colors.greenAccent])),
       child: Text(
         'Login',
         style: TextStyle(fontSize: 20, color: Colors.white),
