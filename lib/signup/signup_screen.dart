@@ -162,7 +162,7 @@ class _SignupScreenState extends State<SignupScreen> {
                       height: 20,
                     ),
                     _submitButton(),
-                    SizedBox(height: height * .14),
+                    SizedBox(height: 5),
                     _loginAccountLabel(),
                   ],
                 ),

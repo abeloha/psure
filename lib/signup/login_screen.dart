@@ -245,7 +245,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   _divider(),
                   _facebookButton(),
-                  SizedBox(height: height * .055),
+                  SizedBox(height: 5),
                   _createAccountLabel(),
                 ],
               ),
