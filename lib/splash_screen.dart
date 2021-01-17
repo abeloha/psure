@@ -37,7 +37,7 @@ class SplashScreenState extends State<SplashScreen>
     super.initState();
 
     controller1 = new AnimationController(
-        vsync: this, duration: const Duration(seconds: 7));
+        vsync: this, duration: const Duration(seconds: 2));
     translation1 = new Tween<double>(begin: 50.0, end: -20.0).animate(
         new CurvedAnimation(
             parent: controller1,

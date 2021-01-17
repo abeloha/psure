@@ -23,7 +23,7 @@ class LandingScreenState extends State<LandingScreen>
   void initState() {
     super.initState();
     buttonAnimationController = new AnimationController(
-        vsync: this, duration: new Duration(milliseconds: 1000));
+        vsync: this, duration: new Duration(milliseconds: 500));
 
     buttonAlignment = new AlignmentTween(
       begin: new Alignment(0.0, 1.0),

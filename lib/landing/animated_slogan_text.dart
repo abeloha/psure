@@ -30,14 +30,14 @@ class _AnimationState extends State<AnimatedSloganText>
 
   String firstLocation = "eWallet";
   String secondLocation = "Transfer Money";
-  String thirdLocation = "Buy Securely ... and More";
+  String thirdLocation = "Escrow & More...";
 
   @override
   void initState() {
     super.initState();
 
     animationController = new AnimationController(
-        vsync: this, duration: new Duration(seconds: 6));
+        vsync: this, duration: new Duration(seconds: 4));
 
     eWalletSlideOut = new AlignmentTween(
             begin: new Alignment(-1.0, 0.0), end: new Alignment(-1.0, 1.0))
