@@ -37,7 +37,7 @@ class _AnimationState extends State<AnimatedSloganText>
     super.initState();
 
     animationController = new AnimationController(
-        vsync: this, duration: new Duration(seconds: 4));
+        vsync: this, duration: new Duration(seconds: 3));
 
     eWalletSlideOut = new AlignmentTween(
             begin: new Alignment(-1.0, 0.0), end: new Alignment(-1.0, 1.0))
